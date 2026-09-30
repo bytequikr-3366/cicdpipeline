@@ -1,0 +1,19 @@
+version: 0.2
+
+phases:
+  pre_build:
+    commands:
+      - echo "Starting build..."
+
+  build:
+    commands:
+      - echo "Building Docker image..."
+      - docker build -t cicdpipeline-app .
+
+  post_build:
+    commands:
+      - echo "Build completed successfully."
+
+artifacts:
+  files:
+    - '**/*'
